@@ -1,8 +1,10 @@
 package org.gigtasker.gigtaskercommon.security;
 
+import org.gigtasker.gigtaskercommon.config.OpenApiConfig;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
@@ -21,6 +23,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 @EnableMethodSecurity
 @Configuration
+@Import(OpenApiConfig.class)
 public class GigTaskerSecurity {
 
     @Bean
@@ -33,9 +36,9 @@ public class GigTaskerSecurity {
                 .authorizeHttpRequests(authorize -> {
                     // 1. Global Rules
                     authorize
-                            .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                            .requestMatchers("/actuator/health/**").permitAll()
-                            .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll();
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        .requestMatchers("/actuator/health/**").permitAll()
+                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll();
 
                     // If the service provided a customizer bean, run its logic here!
                     customizer.ifPresent(c -> c.customize(authorize));

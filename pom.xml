@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.gigtasker</groupId>
-    <artifactId>gigtasker-common</artifactId>
+    <artifactId>common-files</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>gigtasker-common</name>
 

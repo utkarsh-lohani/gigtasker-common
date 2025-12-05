@@ -41,7 +41,7 @@ public class GigTaskerSecurity {
                 .authorizeHttpRequests(auth -> {
                     // Public Endpoints
                     auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                            .requestMatchers("/actuator/health/**").permitAll()
+                            .requestMatchers("/actuator/**").permitAll()
                             .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll();
 
                     // Service-specific overrides

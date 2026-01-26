@@ -2,6 +2,7 @@ package com.gigtasker.common.dto;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.Instant;
 
 public record TaskDTO (
@@ -12,8 +13,8 @@ public record TaskDTO (
         Long assignedUserId,
         String status,
         Instant deadline,
-        Double minPay,
-        Double maxPay,
+        BigDecimal minPay,
+        BigDecimal maxPay,
         Integer maxBidsPerUser
 ) implements Serializable {
     @Serial

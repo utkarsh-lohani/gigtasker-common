@@ -1,4 +1,4 @@
-package org.gigtasker.common.logging;
+package com.gigtasker.common.logging;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -22,12 +22,12 @@ public class LoggingAspect {
      * Pointcut that matches all repositories, services and Web REST endpoints.
      * Assumes your package structure starts with 'com.gigtasker'
      */
-    @Pointcut("within(org.gigtasker..*) && @annotation(org.springframework.web.bind.annotation.RestController)")
+    @Pointcut("within(com.gigtasker..*) && @annotation(org.springframework.web.bind.annotation.RestController)")
     public void springBeanPointcut() {
         // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }
 
-    @Pointcut("within(org.gigtasker..*) && @annotation(org.springframework.stereotype.Service)")
+    @Pointcut("within(com.gigtasker..*) && @annotation(org.springframework.stereotype.Service)")
     public void applicationPackagePointcut() {
         // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }

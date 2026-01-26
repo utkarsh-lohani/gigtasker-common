@@ -1,6 +1,6 @@
-package org.gigtasker.common.security;
+package com.gigtasker.common.security;
 
-import org.gigtasker.common.config.OpenApiConfig;
+import com.gigtasker.common.config.OpenApiConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;

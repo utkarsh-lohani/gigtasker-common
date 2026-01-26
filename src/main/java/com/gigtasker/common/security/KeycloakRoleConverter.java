@@ -1,4 +1,4 @@
-package org.gigtasker.common.security;
+package com.gigtasker.common.security;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.core.GrantedAuthority;
